@@ -8,16 +8,18 @@
     "ios": "bunx expo run:ios",
     "web": "bunx expo start --web",
     "test": "bunx jest",
-    "lint":"eslint src --ext .ts,.tsx",
-    "format":"prettier --write ."
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.18",
     "@react-navigation/native-stack": "^6.11.0",
     "@reduxjs/toolkit": "^2.6.1",
+    "@types/lodash": "^4.17.20",
     "axios": "^1.8.4",
     "expo": "~52.0.43",
     "expo-status-bar": "~2.0.1",
+    "fuse.js": "^7.1.0",
     "react": "18.3.1",
     "react-native": "0.76.9",
     "react-native-gesture-handler": "^2.25.0",

@@ -1,6 +1,16 @@
-# MyApp
+#### MyApp
 
 A React Native (Expo Bare Workflow) project using **TypeScript**, **Bun**, **ESLint**, **Prettier**, and **Jest** fully structured and scalable.
+
+## **Fuzzy Search with Fuse.js in React Native**
+
+This repository showcases the implementation of client-side fuzzy search in a React Native application, leveraging the lightweight and powerful Fuse.js library.
+
+The project provides examples of configuring Fuse.js for approximate string matching, including customizable search options such as:
+
+- keys: Specifying the data fields to be searched.
+- threshold: Adjusting the sensitivity of the fuzzy matching.
+- includeMatches and includeScore: Retrieving detailed information about the matches and their relevance scores.
 
 ---
 
@@ -34,14 +44,14 @@ npm install -g expo-cli
 ### Clone the Repo
 
 ```bash
-git clone https://github.com/dainyjose/rn-expo-typescript-bare-template.git
-cd rn-expo-typescript-bare-template
+git clone https://github.com/dainyjose/search_using_fuse_js.git
+cd search_using_fuse_js
 ```
 
 **Renaming a project during cloning**
 
 ```bash
-git clone https://github.com/dainyjose/rn-expo-typescript-bare-template.git new-repo-name
+git clone https://github.com/dainyjose/search_using_fuse_js.git new-repo-name
 cd new-repo-name
 ```
 
@@ -107,6 +117,8 @@ bun run test           # Run unit tests
 - **ESLint + Prettier** for linting and formatting
 - **React Navigation**
 - **Redux Toolkit** (optional)
+- **Fuse.js**
+- **lodash**
 
 ---
 
