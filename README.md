@@ -1,181 +1,114 @@
-#### MyApp
+# **Fuzzy Search with Fuse.js in React Native**
 
-A React Native (Expo Bare Workflow) project using **TypeScript**, **Bun**, **ESLint**, **Prettier**, and **Jest** fully structured and scalable.
 
-## **Fuzzy Search with Fuse.js in React Native**
-
-This repository showcases the implementation of client-side fuzzy search in a React Native application, leveraging the lightweight and powerful Fuse.js library.
-
-The project provides examples of configuring Fuse.js for approximate string matching, including customizable search options such as:
-
-- keys: Specifying the data fields to be searched.
-- threshold: Adjusting the sensitivity of the fuzzy matching.
-- includeMatches and includeScore: Retrieving detailed information about the matches and their relevance scores.
-
----
 
 ## Table of Contents
 
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Scripts](#scripts)
+- [Description](#description)
+- [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Linting & Formatting](#linting--formatting)
-- [Testing](#testing)
-- [Environment Variables](#environment-variables)
-- [Author](#author)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
 
 ---
 
-## Getting Started
+## Description
+
+```search_using_fuse_js``` is a demo React Native (Expo Bare) app illustrating how to integrate fuzzy search using Fuse.js in client‑side mobile applications. It enables approximate matching so that users can find items without typing exact strings. This is useful for search bars, product lists, or offline data filtering.
+
+---
+
+### Features
+
+- Fuzzy / approximate string matching
+
+- Configurable search keys (e.g. name, description)
+
+- Adjustable threshold and scoring
+
+- Works offline with local datasets
+
+- Built with TypeScript for safety and clarity
+
+---
+
+### Tech Stack
+
+- React Native (Bare Workflow)
+
+- Expo SDK
+
+- TypeScript
+
+- Bun
+
+- Fuse.js
+
+- Jest & @testing-library/react-native
+  
+---
 
 ### Prerequisites
 
-- **Node.js** (only for installing Expo CLI globally)
-- **Bun** (v1.0+)
-- **Expo CLI** (for initializing and running projects)
+- Node.js ≥ 18
 
-### Install Expo CLI
+- Bun ≥ 1.0.0
 
-```bash
-npm install -g expo-cli
-```
+- Expo CLI (globally installed)
 
-### Clone the Repo
+- Android Studio / Xcode setup for running apps on devices/simulators
+
+---
+
+### Installation
 
 ```bash
 git clone https://github.com/dainyjose/search_using_fuse_js.git
 cd search_using_fuse_js
-```
-
-**Renaming a project during cloning**
-
-```bash
-git clone https://github.com/dainyjose/search_using_fuse_js.git new-repo-name
-cd new-repo-name
-```
-
-### Install Dependencies
-
-```bash
 bun install
 ```
+---
 
-### Run the App
+### Usage
 
 ```bash
-bun expo run:android   # For Android
-bun expo run:ios       # For iOS
-bun expo start         # Metro bundler
-```
+# Run on Android
+bun expo run:android
 
+
+# Run on iOS
+bun expo run:ios
+
+
+# Start Metro bundler only
+bun expo start
+```
 ---
 
-## Project Structure
+### Configuration (Fuse.js Options)
 
-```
-src/
-├── __tests__/         # Test component
-├── api/               # API calls
-├── components/        # Reusable components
-├── constants/         # App-wide constants
-├── context/           # Global contexts
-├── enums/             # TypeScript enums
-├── hooks/             # Custom hooks
-├── navigation/        # Navigation config
-├── redux/             # Redux store and slices
-├── screens/           # Screen components
-├── theme/             # Theming and styles
-├── types/             # Global types
-├── utils/             # Utility functions
-App.tsx                # Entry point
-
-```
-
----
-
-## Scripts
+Example Fuse.js setup:
 
 ```bash
-bun run dev            # Start Metro bundler
-bun run android        # Run on Android
-bun run ios            # Run on iOS
-bun run lint           # Run ESLint on src/
-bun run format         # Format code with Prettier
-bun run test           # Run unit tests
+const options: Fuse.IFuseOptions<ItemType> = {
+  keys: ["name", "description"],
+  threshold: 0.3,
+  includeScore: true,
+  includeMatches: true,
+  distance: 100,
+};
 ```
 
----
+- keys → fields to search
 
-## Tech Stack
+- threshold → 0 (exact match) to 1 (loose match)
 
-- **React Native (bare)**
-- **Expo SDK**
-- **TypeScript**
-- **Bun** (JavaScript runtime)
-- **Jest** for unit testing
-- **ESLint + Prettier** for linting and formatting
-- **React Navigation**
-- **Redux Toolkit** (optional)
-- **Fuse.js**
-- **lodash**
+- includeMatches → highlights what matched
 
----
+- includeScore → provides match quality
 
-## Linting & Formatting
 
-**Run ESLint:**
-
-```bash
-bun run lint
-```
-
-**Run Prettier:**
-
-```bash
-bun run format
-```
-
-Configured to ignore `node_modules`, `android/`, `ios/`, `build/`, etc.
-
----
-
-## Testing
-
-**Unit Testing Setup:**
-
-- Framework: `jest`
-- Render tests: `@testing-library/react-native`
-
-```bash
-bun run test
-```
-
----
-
-## Environment Variables
-
-Create a `.env` file at the root:
-
-```env
-API_URL=https://your-api.com
-APP_ENV=development
-```
-
-In `env.d.ts`:
-
-```ts
-declare module '@env' {
-  export const API_URL: string;
-  export const APP_ENV: string;
-}
-```
-
----
-
-## 📖 Documentation
-
-For full setup instructions and details, check out the [Getting Started Guide](./GETTING_STARTED.md).
 
 ## 🧑‍💻 Author
 
